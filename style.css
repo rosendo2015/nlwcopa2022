@@ -139,3 +139,28 @@ body {
         flex-wrap: wrap;
     }
 }
+.colors{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.colors .blue{
+    background-color: #092a50;
+    border: none;
+    padding: 10px;
+    border: 1px rgb(31, 115, 233) solid;
+    border-radius: 50%;
+    
+}
+.colors .green{
+    background-color: #04692e;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+}
+.colors .yellow{
+    background-color: #96900e;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+}
