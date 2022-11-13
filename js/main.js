@@ -28,12 +28,18 @@ buttomYellow.addEventListener('click', function () {
     body.classList.remove('green')
     body.classList.remove('blue')
 })
-function createGame(player1, hour, player2) {
+function createGame(player1, time1, hour, time2, player2) {
     return `
         <li>
+        <div class="equip">
             <img src="./assets/icon-${player1}.svg" alt="bandeira da ${player1}">
-                <strong>${hour}</strong>
+            <i>${player1}</i>
+        </div
+            <strong>${hour}</strong>
+        <div  class="equip">
             <img src="./assets/icon-${player2}.svg" alt="bandeira do ${player2}">
+            <i>${player2}</i>
+        </div>
         </li>
     `
 }
@@ -44,8 +50,7 @@ function createCard(date, day, games) {
 <div class="card" style="animation-delay: ${delay}s">
     <h2>${date} <span>${day}</span></h2>
         <ul>
-          ${games}  
-            
+          ${games}              
     </ul>
 </div>
 `
@@ -53,86 +58,88 @@ function createCard(date, day, games) {
 
 document.querySelector("#cards").innerHTML =
 
-    createCard('20/11', 'Domingo', createGame('catar', '13:00', 'equador')) +
+    createCard('20/11', 'Domingo', 
+    createGame('cat','', '13:00', '', 'equ')) +
 
     createCard('21/11', 'Segunda',
-        createGame('inglaterra', '10:00', 'iran') +
-        createGame('senegal', '13:00', 'holanda') +
-        createGame('estadosUnidos', '16:00', 'gales')) +
+        createGame('ing','', '10:00','', 'ira') +
+        createGame('sen','', '13:00','', 'hol') +
+        createGame('EUA','', '16:00', '', 'gal')) +
 
     createCard('22/11', 'terça',
-        createGame('argentina', '07:00', 'arabiaSaudita') +
-        createGame('dinamarca', '10:00', 'tunisia') +
-        createGame('mexico', '13:00', 'polonia') +
-        createGame('franca', '16:00', 'australia')
+        createGame('arg', '', '07:00', '', 'ara') +
+        createGame('din', '', '10:00', '', 'tun') +
+        createGame('mex', '', '13:00', '', 'pol') +
+        createGame('fra', '', '16:00', '', 'aus')   
     ) +
-
+    
     createCard('23/11', 'Quarta',
-        createGame('marrocos', '07:00', 'croacia') +
-        createGame('alemanha', '10:00', 'japao') +
-        createGame('espanha', '13:00', 'costaRica') +
-        createGame('belgica', '16:00', 'canada')
+        createGame('mar', '', '07:00', '', 'cro') +
+        createGame('ale', '', '10:00', '', 'jap') +
+        createGame('esp', '', '13:00', '', 'crc') +
+        createGame('bel', '', '16:00', '', 'can')
     ) +
 
     createCard('24/11', 'Quinta',
-        createGame('brasil', '16:00', 'servia') +
-        createGame('suica', '07:00', 'camaroes') +
-        createGame('uruguai', '10:00', 'coreiaDoSul') +
-        createGame('portugal', '13:00', 'gana')
+    createGame('sui', '', '07:00', '', 'cam') +
+    createGame('uru', '', '10:00', '', 'cor') +
+    createGame('por', '', '13:00', '', 'gan') +
+    createGame('bra', '', '16:00', '', 'ser') 
     ) +
+
     createCard('25/11', 'Sexta',
-        createGame('gales', '07:00', 'iran') +
-        createGame('catar', '10:00', 'senegal') +
-        createGame('holanda', '13:00', 'equador') +
-        createGame('inglaterra', '16:00', 'estadosUnidos')
+        createGame('gal', '', '07:00', '', 'ira') +
+        createGame('cat', '', '10:00', '', 'sen') +
+        createGame('hol', '', '13:00', '', 'equ') +
+        createGame('ing', '', '16:00', '', 'EUA')
 
     ) +
     createCard('26/11', 'sabado',
-        createGame('tunisia', '07:00', 'australia') +
-        createGame('polonia', '10:00', 'arabiaSaudita') +
-        createGame('franca', '13:00', 'dinamarca') +
-        createGame('argentina', '16:00', 'mexico')
+        createGame('tun', '', '07:00', '', 'aus') +
+        createGame('pol', '', '10:00', '', 'ara') +
+        createGame('fra', '', '13:00', '', 'din') +
+        createGame('arg', '', '16:00', '', 'mex')
 
     ) +
     createCard('27/11', 'domingo',
-        createGame('japao', '07:00', 'costaRica') +
-        createGame('belgica', '10:00', 'marrocos') +
-        createGame('croacia', '13:00', 'canada') +
-        createGame('espanha', '16:00', 'alemanha')
+        createGame('jap', '', '07:00', '', 'crc') +
+        createGame('bel', '', '10:00', '', 'mar') +
+        createGame('cro', '', '13:00', '', 'can') +
+        createGame('esp', '', '16:00', '', 'ale')
 
     ) +
     createCard('28/11', 'segunda',
-        createGame('camaroes', '07:00', 'servia') +
-        createGame('coreiaDoSul', '10:00', 'gana') +
-        createGame('brasil', '13:00', 'suica') +
-        createGame('portugal', '16:00', 'uruguai')
+        createGame('cam', '', '07:00', '', 'ser') +
+        createGame('cor', '', '10:00', '', 'gan') +
+        createGame('bra', '', '13:00', '', 'sui') +
+        createGame('por', '', '16:00', '', 'uru')
 
     ) +
     createCard('29/11', 'terça',
-        createGame('equador', '12:00', 'senegal') +
-        createGame('holanda', '12:00', 'catar') +
-        createGame('iran', '16:00', 'estadosUnidos') +
-        createGame('gales', '16:00', 'inglaterra')
+        createGame('equ','', '12:00','', 'sen') +
+        createGame('hol','', '12:00','', 'cat') +
+        createGame('ira','', '16:00','', 'EUA') +
+        createGame('gal','', '16:00','', 'ing')
 
     ) +
     createCard('30/11', 'quarta',
-        createGame('tunisia', '12:00', 'franca') +
-        createGame('australia', '12:00', 'dinamarca') +
-        createGame('polonia', '16:00', 'argentina') +
-        createGame('arabiaSaudita', '16:00', 'mexico')
+        createGame('tun', '', '12:00', '', 'fra') +
+        createGame('aus', '', '12:00', '', 'din') +
+        createGame('pol', '', '16:00', '', 'arg') +
+        createGame('ara', '', '16:00', '', 'mex')
 
     ) +
     createCard('01/12', 'quinta',
-        createGame('croacia', '12:00', 'belgica') +
-        createGame('canada', '12:00', 'marrocos') +
-        createGame('japao', '16:00', 'espanha') +
-        createGame('costaRica', '16:00', 'alemanha')
+        createGame('cro', '', '12:00', '', 'bel') +
+        createGame('can', '', '12:00', '', 'mar') +
+        createGame('jap', '', '16:00', '', 'esp') +
+        createGame('crc', '', '16:00', '', 'ale')
 
     ) +
     createCard('02/12', 'sexta',
-        createGame('coreiaDoSul', '12:00', 'portugal') +
-        createGame('gana', '12:00', 'uruguai') +
-        createGame('servia', '16:00', 'suica') +
-        createGame('camaroes', '16:00', 'brasil')
+        createGame('cor', '', '12:00', '', 'por') +
+        createGame('gan', '', '12:00', '', 'uru') +
+        createGame('ser', '', '16:00', '', 'sui') +
+        createGame('cam', '', '16:00', '', 'bra')
 
     )
